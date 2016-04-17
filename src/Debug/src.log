@@ -1,8 +1,9 @@
-﻿Build started 17-04-2016 15:35:30.
+﻿Build started 17-04-2016 15:55:26.
      1>Project "C:\mrnd\cmrndtest2\src\src.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CommonRoute.cpp
          CommonRoute.cpp
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\mrnd\cmrndtest2\Debug\src.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\mrnd\cmrndtest2\Debug\src.pdb" /SUBSYSTEM:CONSOLE /HEAP:"10000000","100000" /STACK:"10000000","100000" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\mrnd\cmrndtest2\Debug\src.lib" /MACHINE:X86 Debug\CommonRoute.obj
          Debug\MainCMrndTest2.obj
@@ -14,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.95
+Time Elapsed 00:00:00.84

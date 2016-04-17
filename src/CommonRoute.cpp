@@ -89,12 +89,12 @@ char * find_common_route(char * hacklist, char *codelist, int *cost){
 	
 		
 	}
-	for (k = 0; k < index; i=i+2)
+	for (k = 0; k < index; k=k+2)
 	{
 		sum = 0;
-		for (i = a[k]; i < a[k + 1]; i++)
+		for (i = a[k]; i <= a[k + 1]; i++)
 		{
-			sum = sum + hacklist[i];
+			sum = sum + hacklist[i]-'A'+1;
 		}
 		if (sum > maxcost)
 		{
