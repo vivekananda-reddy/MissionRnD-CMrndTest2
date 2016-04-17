@@ -1,5 +1,0 @@
-﻿  OddEvenSpec.cpp
-OddEvenSpec.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-OddEvenSpec.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\mrndprojects\allcprojects\c-mrndtest2\spec\oddevenspec.cpp(72): warning C4715: 'spec::OddEvenSpec::is_correct' : not all control paths return a value
-  spec.vcxproj -> C:\MrnDprojects\AllCProjects\C-MrndTest2\Debug\spec.dll
