@@ -48,8 +48,108 @@ First Island in DTD ie 'D' occurs alphabatically before 'H' and 'Z')
 #include <stdlib.h>
 #include <stdio.h>
 
-
+int issubstring(char*, char*, int, int);
 char * find_common_route(char * hacklist, char *codelist, int *cost){
-	return NULL;
+	int i, j=0, lmax = 0, a[200] = { 0 },index=0,ans[2],maxcost=0,k,sum=0,x;
+
+	if (hacklist == NULL || codelist == NULL || cost == NULL)
+	{
+		return NULL;
+	}
+	
+	for (i = 0; hacklist[i] != '\0'&&hacklist[j]!='\0'; i++)
+	{
+		x = issubstring(hacklist, codelist, i, j);
+		while ( x )
+		{
+			if (j - i+1 > lmax)
+			{
+				a[0] = i;
+				a[1] = j;
+				index = 2;
+				lmax = j - i + 1;
+			}
+			else if (j - i+1 == lmax)
+			{
+				a[index] = i;
+				index++;
+				a[index] = j;
+				index++;
+			}
+			j++;
+			if (hacklist[j] != '\0')
+				break;
+			x = issubstring(hacklist, codelist, i, j);
+		}
+		if (i == j||lmax>j-i)
+		{
+		
+			j++;
+		}
+	
+		
+	}
+	for (k = 0; k < index; i=i+2)
+	{
+		sum = 0;
+		for (i = a[k]; i < a[k + 1]; i++)
+		{
+			sum = sum + hacklist[i];
+		}
+		if (sum > maxcost)
+		{
+			ans[0] = a[k];
+			ans[1] = a[k + 1];
+			maxcost = sum;
+		}
+		else if (sum == maxcost)
+		{
+			if (hacklist[ans[0]]<hacklist[a[k]])
+			{
+				continue;
+			}
+			else
+			{
+				ans[0] = a[k];
+				ans[1] = a[k+1];
+			}
+		}
+	}
+	char *path = (char*)malloc(sizeof(char)*(ans[1] - ans[0] + 1));
+	for (k = ans[0]; k <= ans[1]; k++)
+	{
+		path[k - ans[0]] = hacklist[k];
+	}
+	path[k - ans[0]] = '\0';
+	*cost = maxcost;
+	return path;
 }
 
+int issubstring(char*hacklist, char*codelist, int start, int end)
+{
+	int i, j,count=1,k;
+	for (i = 0; codelist[i] != '\0'; i++)
+	{
+		if (codelist[i] == hacklist[start])
+		{
+			j = start + 1;
+			k = i + 1;
+			while ( j<= end)
+			{
+				if (codelist[k] != hacklist[j])
+				{
+					count = 0;
+					break;
+				}
+				j++;
+				k++;
+			}
+			if (count == 1)
+			{
+				return 1;
+			}
+		}
+	}
+	return 0;
+
+}
