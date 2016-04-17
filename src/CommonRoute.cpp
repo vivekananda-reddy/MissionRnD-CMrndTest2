@@ -77,7 +77,7 @@ char * find_common_route(char * hacklist, char *codelist, int *cost){
 				index++;
 			}
 			j++;
-			if (hacklist[j] != '\0')
+			if (hacklist[j] == '\0')
 				break;
 			x = issubstring(hacklist, codelist, i, j);
 		}
@@ -130,6 +130,7 @@ int issubstring(char*hacklist, char*codelist, int start, int end)
 	int i, j,count=1,k;
 	for (i = 0; codelist[i] != '\0'; i++)
 	{
+		count = 1;
 		if (codelist[i] == hacklist[start])
 		{
 			j = start + 1;
